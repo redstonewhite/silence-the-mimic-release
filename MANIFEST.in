@@ -1,4 +1,3 @@
 include README.md LICENSE THIRD_PARTY_NOTICES.md ENCODER_LICENSES.md
-recursive-include docs *.md
 recursive-include examples *.py
 recursive-include tests *.py
