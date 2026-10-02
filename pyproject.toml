@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "silence-the-mimic"
+version = "0.1.0"
+description = "STM: psychoacoustically constrained speaker-embedding perturbations"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "ENCODER_LICENSES.md"]
+requires-python = ">=3.10"
+dependencies = ["numpy", "torch"]
+
+[project.optional-dependencies]
+audio = ["librosa>=0.10", "soundfile"]
+encoders = ["librosa>=0.10", "soundfile", "torchaudio", "scipy", "webrtcvad-wheels"]
+
+[project.scripts]
+stm = "silence_the_mimic.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["silence_the_mimic*"]
+
+[tool.setuptools]
+include-package-data = false
